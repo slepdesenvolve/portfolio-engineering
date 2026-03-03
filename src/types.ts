@@ -33,3 +33,12 @@ export interface JourneyItem {
   description: string;
   type: 'quest' | 'milestone' | 'origin';
 }
+
+export interface Experiment {
+  id: string;
+  title: string;
+  description: string;
+  status: 'ESTÁVEL' | 'EM_TESTE' | 'LEGADO';
+  version: string;
+  techs: string[];
+}

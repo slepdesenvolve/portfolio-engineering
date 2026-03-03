@@ -1,6 +1,6 @@
 /**
  * @file index.css
- * @description Estilos globais, variáveis de tema e utilitários customizados.
+ * @description Infraestrutura de estilos globais e variáveis de estado.
  */
 
 @import "tailwindcss";
@@ -21,7 +21,7 @@
 }
 
 :root {
-  /* Dark Mode (Default) */
+  /* --- Dark Mode (Default) - Paleta Industrial --- */
   --primary: #FEFACD;
   --secondary: #5F4A8B;
   --accent: #E6B325;
@@ -34,51 +34,61 @@
 }
 
 [data-theme="light"] {
-  /* Light Mode */
-  --primary: #4A3B6B;      /* Inversão: O roxo vira a cor de destaque principal */
-  --secondary: #70648b;    /* Mantém o Accent para botões e alertas */
-  --accent: #B88A10;       /* Um tom de ouro mais escuro para leitura em fundo claro */
-  --bg-base: #eeebfa;      /* Cinza claríssimo, quase papel técnico */
-  --bg-card: #e9e8fa;      /* Branco puro para destacar os "dossiês" */
-  --bg-grid-color: #baaad6;/* Linhas de grade sutis para manter o look industrial */
-  --text-main: #1E293B;    /* Azul marinho profundo para legibilidade máxima */
-  --text-muted: #2a214b;   /* Cinza para descrições técnicas secundárias */
-  --border-main: #CBD5E1;  /* Bordas finas que lembram formulários impressos */
+  /* --- Light Mode - Dossiê Técnico --- */
+  --primary: #4A3B6B;
+  --secondary: #70648b;
+  --accent: #B88A10;
+  --bg-base: #eeebfa;
+  --bg-card: #e9e8fa;
+  --bg-grid-color: #baaad6;
+  --text-main: #1E293B;
+  --text-muted: #2a214b;
+  --border-main: #CBD5E1;
 }
 
-
-
+/* --- BODY ---  */
 body {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
   background-color: var(--bg-base);
   color: var(--text-main);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Transição de 0.5s com curva cubic-bezier para um feeling mais orgânico */
+  transition: 
+    background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* --- Garante que os cards também suavizem --- */
+.bg-bg-card, .border-border-main {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- UTILITÁRIOS DE ENGENHARIA --- */
 
 .mono { font-family: var(--font-mono); }
 
 .bg-grid {
   background-image: radial-gradient(var(--bg-grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
+  transition: background-image 0.3s ease;
 }
 
+/* Glows Dinâmicos: Usam color-mix para evitar repetição de HEX */
 .text-glow {
-  text-shadow: 0 0 15px rgba(254, 250, 205, 0.4);
-}
-
-[data-theme="light"] .text-glow {
-  text-shadow: 0 0 10px rgba(74, 59, 139, 0.2);
+  text-shadow: 0 0 15px color-mix(in srgb, var(--primary), transparent 60%);
 }
 
 .accent-glow {
-  text-shadow: 0 0 10px rgba(230, 179, 37, 0.6);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--accent), transparent 40%);
 }
 
 .purple-glow {
-  box-shadow: 0 0 20px rgba(95, 74, 139, 0.3);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--secondary), transparent 70%);
 }
 
+/* Animações de Status */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }

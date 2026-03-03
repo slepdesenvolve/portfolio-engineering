@@ -31,23 +31,26 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
     >
       {/* Container do Dossiê */}
       <div 
-        className="relative w-full max-w-4xl border border-secondary bg-bg-card p-1 shadow-[0_0_30px_rgba(95,74,139,0.3)] my-auto"
+        className="relative w-full max-w-4xl border border-secondary bg-bg-card p-1 shadow-[0_0_30px_rgba(95,74,139,0.3)] my-8 md:my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         
         {/* Header Estilo Terminal */}
-        <div className="flex justify-between items-center bg-secondary/20 p-2 border-b border-secondary">
-          <span className="text-accent font-mono text-sm tracking-widest">
+        <div className="flex justify-between items-center bg-secondary/20 p-2 border-b border-secondary gap-4">
+          <span className="text-accent font-mono text-xs md:text-sm tracking-widest truncate">
             // DOSSIÊ_TÉCNICO: {project.title}
           </span>
-          <button onClick={onClose} className="text-accent hover:text-primary font-mono transition-colors">
-            [ FECHAR_X ]
+          <button 
+            onClick={onClose} 
+            className="text-accent hover:text-primary font-mono transition-colors whitespace-nowrap flex-shrink-0 text-xs md:text-sm"
+          >
+            [FECHAR_X]
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 p-6">
+        <div className="grid md:grid-cols-2 gap-6 p-4 md:p-8">
           {/* Lado Esquerdo: Arte do Projeto */}
-          <div className="relative group overflow-hidden border border-secondary/50 bg-bg-base">
+          <div className="relative group overflow-hidden border border-secondary/50 bg-bg-base aspect-video md:aspect-auto">
             <img 
               src={project.imageUrl} 
               alt={project.title}
@@ -57,7 +60,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
           </div>
 
           {/* Lado Direito: Relatório de Engenharia */}
-          <div className="space-y-4 font-mono">
+          <div className="space-y-6 font-mono">
             <div>
               <h3 className="text-accent text-xs underline mb-2">RESUMO_OPERACIONAL</h3>
               <p className="text-text-muted text-sm leading-relaxed">
@@ -65,14 +68,14 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-2">
-              <div className="bg-secondary/10 p-2 border border-secondary/30">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-secondary/10 p-3 border border-secondary/30">
                 <span className="block text-[10px] text-secondary">STATUS</span>
-                <span className="text-accent text-xs uppercase">{project.status || 'OPERACIONAL'}</span>
+                <span className="text-accent text-xs uppercase font-bold">{project.status || 'OPERACIONAL'}</span>
               </div>
-              <div className="bg-secondary/10 p-2 border border-secondary/30">
+              <div className="bg-secondary/10 p-3 border border-secondary/30">
                 <span className="block text-[10px] text-secondary uppercase">{project.metric_label || 'PRECISÃO'}</span>
-                <span className="text-accent text-xs">{project.metric_value || '99.8% (6σ)'}</span>
+                <span className="text-accent text-xs font-bold">{project.metric_value || '99.8% (6σ)'}</span>
               </div>
             </div>
 
