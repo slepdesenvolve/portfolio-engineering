@@ -336,22 +336,25 @@ const Home: React.FC = () => {
         ========================================================================
       */}
 
-      <ScrollAnimatedSection
-        id="contact"
-        className="py-20 bg-bg-base border-t border-border-main"
-      >
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              // PROTOCOLAR CONTATO?
+      <ScrollAnimatedSection id="contact" className="py-24 bg-bg-base relative overflow-hidden">
+        {/* Elementos de fundo decorativos */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/50 to-transparent"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <span className="mono text-accent text-xs font-bold tracking-[0.3em] uppercase mb-4 block animate-pulse">
+              // ESTABELECER_UPLINK
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6 tracking-tight">
+              PROTOCOLAR CONTATO?
             </h2>
-            <p className="text-text-muted text-lg max-w-2xl mx-auto">
-              Transformo gargalos operacionais em fluxos automatizados. Seja
-              para projetos escaláveis ou consultoria técnica, estabeleça o
-              uplink abaixo.
+            <p className="text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+              Transformo gargalos operacionais em fluxos automatizados. Seja para projetos escaláveis ou consultoria técnica, estabeleça o uplink abaixo.
             </p>
           </div>
-
+          
           <ContactForm />
         </div>
       </ScrollAnimatedSection>
