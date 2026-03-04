@@ -14,7 +14,7 @@ export const ContactForm: React.FC = () => {
     try {
       // Formspree como endpoint padrão (Gratuito e fácil de configurar)
       // O usuário só precisa trocar o ID depois ou usar o email direto
-      const response = await fetch('https://formspree.io/f/ricardonogueira.dev@gmail.com', {
+      const response = await fetch('https://formspree.io/f/xvzwppzr', {
         method: 'POST',
         body: data,
         headers: {
