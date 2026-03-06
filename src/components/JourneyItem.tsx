@@ -57,7 +57,7 @@ export const JourneyItem: React.FC<JourneyItemProps> = ({ item, index }) => {
   return (
     <div 
       ref={itemRef}
-      className={`relative flex flex-col md:flex-row items-center gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}
+      className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}
     >
       {/* Círculo Central / Lateral (Mobile) */}
       <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-bg-base border-2 border-accent rounded-full z-10 shadow-[0_0_10px_var(--accent)]"></div>
@@ -70,7 +70,7 @@ export const JourneyItem: React.FC<JourneyItemProps> = ({ item, index }) => {
           x,
           originX: originXValue
         }}
-        className="w-full md:w-1/2 ml-16 md:ml-0"
+        className="w-[calc(100%-4rem)] md:w-1/2 ml-16 md:ml-0"
       >
         <div className="p-6 rounded-xl bg-bg-card border border-border-main hover:border-secondary transition-all shadow-xl">
           <span className="mono text-accent text-xs font-bold mb-2 block tracking-widest">{item.year}</span>
