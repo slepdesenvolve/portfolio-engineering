@@ -21,6 +21,13 @@ export const Navbar: React.FC = () => {
   );
   const location = useLocation();
 
+  const handleLogoClick = () => {
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   // Efeito para sincronizar o tema e trocar a logo
   React.useEffect(() => {
     const handleThemeChange = (e: any) => {
@@ -53,7 +60,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           
           <div className="flex items-center">
-            <Link to="/" className="flex items-center group">
+            <Link to="/" onClick={handleLogoClick} className="flex items-center group">
               {logoUrl && !logoError ? (
                 <img 
                   src={logoUrl} 
