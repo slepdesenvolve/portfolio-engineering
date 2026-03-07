@@ -170,9 +170,9 @@ const Home: React.FC = () => {
                 className="group bg-bg-card border border-border-main rounded-xl overflow-hidden hover:border-accent/30 transition-all flex flex-col cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative aspect-square overflow-hidden bg-bg-base">
+                <div className="relative aspect-square overflow-hidden bg-slate-950">
                   <img src={project.imageUrl} alt={project.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-base/40 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{project.title}</h3>

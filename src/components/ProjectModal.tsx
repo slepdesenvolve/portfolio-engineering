@@ -44,19 +44,19 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
             onClick={onClose} 
             className="text-accent hover:text-primary font-mono transition-colors whitespace-nowrap flex-shrink-0 text-xs md:text-sm"
           >
-            [FECHAR_X]
+            [ FECHAR_X ]
           </button>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 p-4 md:p-8">
           {/* Lado Esquerdo: Arte do Projeto */}
-          <div className="relative group overflow-hidden border border-secondary/50 bg-bg-base aspect-video md:aspect-auto">
+          <div className="relative group overflow-hidden border border-secondary/50 bg-slate-950 aspect-video md:aspect-auto">
             <img 
               src={project.imageUrl} 
               alt={project.title}
               className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
             />
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-bg-card/40 to-transparent" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 to-transparent" />
           </div>
 
           {/* Lado Direito: Relatório de Engenharia */}
