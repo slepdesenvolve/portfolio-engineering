@@ -8,7 +8,7 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  
+
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
@@ -22,28 +22,28 @@
 
 :root {
   /* --- Dark Mode (Default) - Paleta Industrial --- */
-  --primary: #FEFACD;
-  --secondary: #5F4A8B;
-  --accent: #E6B325;
+  --primary: #fffce0;
+  --secondary: #5f4a8b;
+  --accent: #d4af37;
   --bg-base: #0d0b14;
   --bg-card: #1a1625;
   --bg-grid-color: #2d263f;
-  --text-main: #e2f0e4;
-  --text-muted: #94a3b8;
+  --text-main: #f1f1e6;
+  --text-muted: #7e7491;
   --border-main: #2d263f;
 }
 
 [data-theme="light"] {
   /* --- Light Mode - Dossiê Técnico --- */
-  --primary: #4A3B6B;
+  --primary: #4a3b6b;
   --secondary: #70648b;
-  --accent: #B88A10;
-  --bg-base: #eeebfa;
-  --bg-card: #e9e8fa;
+  --accent: #b88a10;
+  --bg-base: #f4f2ff;
+  --bg-card: #ececec;
   --bg-grid-color: #baaad6;
-  --text-main: #1E293B;
+  --text-main: #1a1625;
   --text-muted: #2a214b;
-  --border-main: #CBD5E1;
+  --border-main: #d1cbe3;
 }
 
 /* --- BODY ---  */
@@ -53,7 +53,7 @@ body {
   background-color: var(--bg-base);
   color: var(--text-main);
   /* Transição de 0.5s com curva cubic-bezier para um feeling mais orgânico */
-  transition: 
+  transition:
     background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
@@ -61,13 +61,16 @@ body {
 }
 
 /* --- Garante que os cards também suavizem --- */
-.bg-bg-card, .border-border-main {
+.bg-bg-card,
+.border-border-main {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --- UTILITÁRIOS DE ENGENHARIA --- */
 
-.mono { font-family: var(--font-mono); }
+.mono {
+  font-family: var(--font-mono);
+}
 
 .bg-grid {
   background-image: radial-gradient(var(--bg-grid-color) 1px, transparent 1px);
@@ -90,8 +93,13 @@ body {
 
 /* Animações de Status */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
