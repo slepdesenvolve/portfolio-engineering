@@ -220,13 +220,13 @@ export const AutoDocVisualizer: React.FC = () => {
           5. SAÍDA DO LINTER (TERMINAL / RELATÓRIO)
           ========================================================================
         */}
-        <div className="bg-bg-base/30 flex flex-col relative h-[400px] lg:h-full">
-          <div className="bg-bg-base/50 p-2 border-b border-border-main flex items-center gap-2">
+        <div className="bg-bg-base/30 flex flex-col relative h-[400px] lg:h-full overflow-hidden">
+          <div className="bg-bg-base/50 p-2 border-b border-border-main flex items-center gap-2 shrink-0">
             <Terminal className="w-3 h-3 text-accent" />
             <span className="mono text-[10px] text-text-muted uppercase">linter_output</span>
           </div>
 
-          <div className="flex-1 overflow-y-auto custom-scrollbar scroll-smooth">
+          <div className="flex-1 overflow-y-auto custom-scrollbar scroll-smooth min-h-0">
             <AnimatePresence mode="wait">
               {!showResults ? (
                 <div className="p-4 space-y-2">
