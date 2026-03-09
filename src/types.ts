@@ -23,7 +23,25 @@ export interface Skill {
 export interface SkillCategory {
   title: string;
   skills: string[];
-  icon: 'shield' | 'sword' | 'map' | 'compass' | 'scroll' | 'database' | 'cpu' | 'terminal' | 'activity' | 'magic' | 'wizard' | 'eye' | 'wand' | 'github' | 'linkedin' | 'Code2' | 'clipboard' | 'users';
+  icon:
+    | "shield"
+    | "sword"
+    | "map"
+    | "compass"
+    | "scroll"
+    | "database"
+    | "cpu"
+    | "terminal"
+    | "activity"
+    | "magic"
+    | "wizard"
+    | "eye"
+    | "wand"
+    | "github"
+    | "linkedin"
+    | "Code2"
+    | "clipboard"
+    | "users";
 }
 
 export interface JourneyItem {
@@ -31,14 +49,16 @@ export interface JourneyItem {
   title: string;
   location: string;
   description: string;
-  type: 'quest' | 'milestone' | 'origin';
+  type: "quest" | "milestone" | "origin";
 }
 
 export interface Experiment {
   id: string;
   title: string;
   description: string;
-  status: 'ESTÁVEL' | 'EM_TESTE' | 'LEGADO';
+  extendedDescription?: string;
+  technicalDetails?: string[];
+  status: "ESTÁVEL" | "EM_TESTE" | "LEGADO";
   version: string;
   techs: string[];
 }

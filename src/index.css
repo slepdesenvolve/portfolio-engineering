@@ -110,3 +110,30 @@ body {
   background: var(--secondary);
   color: var(--primary);
 }
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+::selection {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-main);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
