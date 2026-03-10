@@ -1,3 +1,11 @@
+/**
+ * @license MIT
+ * @author Ricardo Nogueira @ 2026 (https://github.com/slepdesenvolve)
+ * @description Core Engine de análise AST para o AutoDoc Linter.
+ * Este módulo utiliza a TypeScript Compiler API para auditoria de governança documental.
+ */
+
+
 import * as ts from 'typescript';
 import { AnalysisResult, DocEntry, LogCallback } from './types';
 
