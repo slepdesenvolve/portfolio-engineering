@@ -1,5 +1,9 @@
 # [LOG] Ricardo Nogueira | Computer Engineer & Data Specialist
 
+[STATUS: SISTEMA EVOLUÍDO PARA V2]
+A arquitetura deste portfólio foi migrada para um ecossistema reativo com Firebase e React 19. 
+Confira o terminal ativo em: [https://ricardo-nogueira.vercel.app/]
+
 Engenheiro de Computação focado em **determinismo de dados** e arquitetura de sistemas inteligentes. Especialista em converter fluxos operacionais complexos em eficiência digital e automação de alta performance.
 
 ## 📊 Status do Sistema (Perfil)
